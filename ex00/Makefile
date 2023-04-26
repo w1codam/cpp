@@ -2,7 +2,7 @@ NAME 	= convert
 CC 		= c++
 CFLAGS 	= -Wall -Werror -Wextra -std=c++98
 
-SRC 	= main.cpp Converter.cpp
+SRC 	= main.cpp ScalarConverter.cpp
 
 OBJ = ${SRC:%.cpp=%.o}
 

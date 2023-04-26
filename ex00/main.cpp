@@ -1,10 +1,11 @@
-#include "Converter.hpp"
+#include "ScalarConverter.hpp"
 
-std::string	Converter::_representation	= "";
-double 		Converter::_double   		= 0;
-long		Converter::_int      		= 0;
-char		Converter::_char     		= 0;
-float		Converter::_float    		= 0;
+std::string	ScalarConverter::_representation	= "";
+double 		ScalarConverter::_double   			= 0;
+long		ScalarConverter::_long      		= 0;
+int			ScalarConverter::_int      			= 0;
+char		ScalarConverter::_char     			= 0;
+float		ScalarConverter::_float    			= 0;
 
 int main(int argc, char *argv[])
 {
@@ -14,5 +15,5 @@ int main(int argc, char *argv[])
         return (EXIT_FAILURE);
     }
 
-    Converter::convert(argv[1]);
+    ScalarConverter::convert(argv[1]);
 }
