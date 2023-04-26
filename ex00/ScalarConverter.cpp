@@ -28,13 +28,13 @@ ScalarConverter::Type ScalarConverter::getType()
 {
     char    *end;
 
-    if (_representation.length() == 1 && (_representation[0] >= 0 && _representation[0] <= 127 && isprint(_representation[0])))
-        return (CHAR);
-
     std::strtol(_representation.c_str(), &end, 10);
     if (end[0] == '\0')
         return (INT);
-    
+
+    if (_representation.length() == 1 && (_representation[0] >= 0 && _representation[0] <= 127 && isprint(_representation[0])))
+        return (CHAR);
+
     std::strtof(_representation.c_str(), &end);
     if ((end[0] == 'f' && end[1] == '\0') || _representation.compare("-inff") == 0 || _representation.compare("inff") == 0 || _representation.compare("nanf") == 0)
         return (FLOAT);
